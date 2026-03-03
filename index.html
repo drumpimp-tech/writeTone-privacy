@@ -1,245 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WriteTone – Privacy Policy</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+WriteTone
+TrevBeats Multimedia · Urban AI Suite
+Privacy Policy
+Effective Date: June 2025  ·  Last Updated: July 2025  ·  TrevBeats Multimedia
 
-    body {
-      background: #0a0a0e;
-      color: #e0e0e0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+WriteTone is developed and operated by TrevBeats Multimedia. This Privacy Policy explains what data WriteTone collects, how it is used, and which third-party services receive your data when you use the app.
 
-    header {
-      background: linear-gradient(135deg, #0d0d14 0%, #12101a 100%);
-      border-bottom: 1px solid rgba(0,180,255,0.15);
-      padding: 40px 24px 32px;
-      text-align: center;
-    }
+1. Information We Collect
+Information You Provide
+When setting up your voice profile, you may voluntarily provide:
 
-    .logo-mark {
-      display: inline-block;
-      background: linear-gradient(135deg, #00b4ff, #8833ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
+Your name, brand name, professional name, and occupation — used only to build your AI voice profile
+Social media handles (Instagram, TikTok, YouTube, X/Twitter, Facebook) — used to analyze your public post history
+Profile photo — stored locally on your device only, never transmitted
+Writing samples — pasted manually to improve voice fingerprint accuracy
+Signature phrases — stored locally and used only when you toggle them on
+Information Processed When You Use the App
+When you request a rewrite or voice analysis, the following data is transmitted to third-party AI services:
 
-    .badge {
-      display: inline-block;
-      margin-top: 8px;
-      background: rgba(0,180,255,0.1);
-      border: 1px solid rgba(0,180,255,0.25);
-      color: #00b4ff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-    }
+Input text — the text or content you paste or type for rewriting
+Voice style preferences — your tone, dialect, energy level, and writing style settings from your voice profile
+Social media handles — when you run a Deep Analyze, your handles are sent to search for your public posts
+Writing samples — if you use the Manual Voice Boost feature, your pasted samples are sent for analysis
+This data is processed in real-time and is not stored on TrevBeats Multimedia's servers after a response is returned.
 
-    .effective {
-      margin-top: 12px;
-      font-size: 13px;
-      color: #666;
-    }
+Information We Do NOT Collect
+We do not collect your email address, phone number, or payment information
+We do not create user accounts
+We do not track your location
+We do not use third-party analytics or advertising SDKs
+We do not sell your data to third parties
+2. How We Use Your Information
+All information you provide is used exclusively to power the app's AI voice-matching and content rewriting features:
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+Your profile data is used to build a personalized voice fingerprint stored locally on your device
+Your input text and voice profile settings are sent to Anthropic's Claude AI API to generate rewritten content in your style
+Your social handles and writing samples are sent to our AI proxy to perform voice analysis
+Your output history (last 20 rewrites) is stored locally on your device for your reference only
+3. Data Storage
+WriteTone stores all profile and history data locally on your device using iOS UserDefaults and Keychain:
 
-    h2 {
-      font-size: 20px;
-      font-weight: 800;
-      color: #00b4ff;
-      margin: 48px 0 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0,180,255,0.2);
-      letter-spacing: 0.3px;
-    }
+Your voice profile (name, handles, style preferences, writing samples)
+Your output history (last 20 rewrites)
+Your profile photo (if provided)
+Your data consent preference
+This data is not stored on TrevBeats Multimedia's servers. Deleting the app removes all locally stored data.
 
-    h3 {
-      font-size: 15px;
-      font-weight: 700;
-      color: #aa66ff;
-      margin: 28px 0 8px;
-    }
+4. Third-Party Services
+WriteTone transmits data to the following third-party services to deliver its core features. By using WriteTone and agreeing to the in-app consent prompt, you acknowledge that your data is shared with these services.
 
-    p {
-      color: #c0c0cc;
-      margin-bottom: 14px;
-    }
+Anthropic – Claude AI API
+What is sent: Your input text and voice style preferences are transmitted to Anthropic's Claude AI API for every rewrite and tone modification request.
 
-    ul {
-      list-style: none;
-      margin: 8px 0 16px;
-      padding: 0;
-    }
+Why: Claude AI powers all content rewriting, voice cloning, and tone adjustment features in WriteTone.
 
-    ul li {
-      color: #c0c0cc;
-      padding: 6px 0 6px 24px;
-      position: relative;
-    }
+Data protection: Anthropic does not use API-submitted data to train its models. Data submitted via the API is not retained beyond the scope of the request.
 
-    ul li::before {
-      content: "›";
-      position: absolute;
-      left: 6px;
-      color: #00b4ff;
-      font-weight: 700;
-    }
+Anthropic's Privacy Policy: anthropic.com/privacy
 
-    .intro-card {
-      background: rgba(0,180,255,0.05);
-      border: 1px solid rgba(0,180,255,0.15);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-bottom: 8px;
-      color: #b0b8cc;
-      font-size: 15px;
-    }
+TrevBeats Multimedia AI Proxy (Firebase Cloud Functions)
+What is sent: All AI requests are routed through a proprietary proxy hosted on Google Cloud (Firebase Cloud Functions) before being forwarded to Anthropic's API. This proxy exists to keep API credentials secure and is not used to log or store your content.
 
-    .contact-card {
-      background: linear-gradient(135deg, rgba(0,180,255,0.07), rgba(136,51,255,0.07));
-      border: 1px solid rgba(136,51,255,0.2);
-      border-radius: 14px;
-      padding: 24px 28px;
-      margin-top: 16px;
-    }
+Data retention: No request content is logged or retained by TrevBeats Multimedia beyond the duration of the request.
 
-    .contact-card .brand {
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-    }
+Google Cloud Privacy Policy: cloud.google.com/terms/cloud-privacy-notice
 
-    .contact-card .sub {
-      font-size: 13px;
-      color: #888;
-      margin-top: 4px;
-    }
+Perplexity AI (via Proxy – Voice Analysis Only)
+What is sent: When you run a Deep Analyze, your name and social media handles are sent to search for your publicly available post history on social media platforms.
 
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 12px;
-      color: #444;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
+Why: Perplexity AI is used to find and analyze your public posts to build your voice fingerprint. Only publicly available content is accessed. Private accounts and private posts are never accessed.
 
-    footer span {
-      color: #666;
-    }
+Perplexity's Privacy Policy: perplexity.ai/hub/legal/privacy-policy
 
-    @media (max-width: 600px) {
-      .logo-mark { font-size: 32px; }
-      h2 { font-size: 18px; }
-      main { padding: 32px 18px 60px; }
-    }
-  </style>
-</head>
-<body>
+5. Camera and Photo Library
+WriteTone requests camera and photo library access only to allow you to set a profile photo. Photos are resized and stored locally on your device only. Images are never transmitted to any server.
 
-<header>
-  <div class="logo-mark">WriteTone</div><br/>
-  <span class="badge">Privacy Policy</span>
-  <p class="effective">Effective Date: June 2025 &nbsp;·&nbsp; TrevBeats Multimedia</p>
-</header>
+6. User Consent
+On first launch, WriteTone presents a data disclosure consent screen before any data is transmitted to third-party AI services. This screen discloses:
 
-<main>
+What data will be sent (your text and voice preferences)
+Who the data is sent to (Anthropic's Claude AI API)
+That TrevBeats Multimedia does not store or sell your content
+You must tap "I Agree" before any AI-powered feature transmits data. If you tap "Not Now," no data is transmitted.
 
-  <div class="intro-card">
-    WriteTone is developed and operated by <strong>TrevBeats Multimedia</strong>. This Privacy Policy explains how WriteTone handles your information. We are committed to protecting your privacy — your data stays on your device.
-  </div>
+7. Children's Privacy
+WriteTone is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the app, please contact us and we will take appropriate action.
 
-  <h2>1. Information We Collect</h2>
+8. Data Retention
+Since all profile and history data is stored locally on your device, you control your data retention. You may delete the app at any time to remove all stored data.
 
-  <h3>Information You Provide</h3>
-  <p>When setting up your voice profile, you may voluntarily provide:</p>
-  <ul>
-    <li>Your name, brand name, professional name, and occupation — used only to build your AI voice profile</li>
-    <li>Social media handles (Instagram, TikTok, YouTube, X/Twitter, Facebook) — used to analyze your public post history</li>
-    <li>Profile photo — stored locally on your device only, never transmitted</li>
-    <li>Writing samples — pasted manually to improve voice fingerprint accuracy</li>
-    <li>Signature phrases — stored locally and used only when you toggle them on</li>
-  </ul>
+Data transmitted to Anthropic and Perplexity via our proxy is not retained by TrevBeats Multimedia after the API response is returned. For data retained by Anthropic or Perplexity, please refer to their respective privacy policies linked in Section 4.
 
-  <h3>Information Processed by the App</h3>
-  <p>Text you enter for rewriting is sent to our AI proxy service to generate transformed output. This text is processed in real-time and is <strong>not stored on our servers</strong> after a response is returned.</p>
+9. Your Rights
+Because WriteTone does not collect or store personal data on TrevBeats Multimedia's servers, most data rights are exercised simply by using or deleting the app. If you have questions about data processed through our AI proxy or by third-party services, you may contact us below.
 
-  <h3>Information We Do NOT Collect</h3>
-  <ul>
-    <li>We do not collect your email address, phone number, or payment information</li>
-    <li>We do not create user accounts</li>
-    <li>We do not track your location</li>
-    <li>We do not use third-party analytics or advertising SDKs</li>
-    <li>We do not sell your data to third parties</li>
-  </ul>
+10. Changes to This Policy
+We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of the app after any changes constitutes your acceptance of the updated policy.
 
-  <h2>2. How We Use Your Information</h2>
-  <p>All information you provide is used exclusively to power the App's AI voice-matching features:</p>
-  <ul>
-    <li>Your profile data is used to build a personalized voice fingerprint stored locally on your device</li>
-    <li>Your input text and voice profile are sent to our AI proxy to generate rewritten content in your style</li>
-    <li>Your output history (last 20 rewrites) is stored locally on your device for your reference</li>
-  </ul>
+11. Contact Us
+If you have any questions about this Privacy Policy, please contact:
 
-  <h2>3. Data Storage</h2>
-  <p>WriteTone stores all data <strong>locally on your device</strong> using iOS UserDefaults and Keychain:</p>
-  <ul>
-    <li>Your voice profile (name, handles, style preferences, writing samples)</li>
-    <li>Your output history (last 20 rewrites)</li>
-    <li>Your profile photo (if provided)</li>
-  </ul>
-  <p>This data is not transmitted to or stored on our servers. Deleting the App removes all locally stored data.</p>
+TrevBeats Multimedia
+Developer of WriteTone · TrevBeats Urban AI Suite
 
-  <h2>4. Third-Party Services</h2>
-
-  <h3>AI Proxy Service</h3>
-  <p>WriteTone uses a proprietary AI proxy hosted on Google Cloud (Firebase Cloud Functions) to process rewrite and voice analysis requests. Text processed by this service is not logged or stored by TrevBeats Multimedia beyond the duration of the request.</p>
-
-  <h3>Perplexity AI (via Proxy)</h3>
-  <p>Our AI proxy uses Perplexity AI's API to search public social media content and perform text generation. Only publicly available content is used. We do not access private accounts or private posts.</p>
-
-  <h2>5. Camera and Photo Library</h2>
-  <p>WriteTone requests camera and photo library access only to allow you to set a profile photo. Photos are resized and stored locally on your device only. Images are never transmitted to any server.</p>
-
-  <h2>6. Children's Privacy</h2>
-  <p>WriteTone is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the App, please contact us and we will take appropriate action.</p>
-
-  <h2>7. Data Retention</h2>
-  <p>Since all data is stored locally on your device, you control your data retention. You may delete the App at any time to remove all stored data. There is no server-side data to delete or request.</p>
-
-  <h2>8. Your Rights</h2>
-  <p>Because WriteTone does not collect or store personal data on remote servers, most data rights are exercised simply by using or deleting the App. If you have questions about data processed through our AI proxy, you may contact us below.</p>
-
-  <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
-
-  <h2>10. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy, please contact:</p>
-  <div class="contact-card">
-    <div class="brand">TrevBeats Multimedia</div>
-    <div class="sub">Developer of WriteTone · TrevBeats Urban AI Suite</div>
-  </div>
-
-</main>
-
-<footer>
-  <span>© 2025 TrevBeats Multimedia · WriteTone · All rights reserved</span>
-</footer>
-
-</body>
-</html>
+© 2025 TrevBeats Multimedia · WriteTone · All rights reserved
